@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Insano</title>
+</head>
+<body class="bg-gray-100 flex items-center justify-center 
+min-h-screen" >
+<article class="bg-white p-6 rounded-2xl shadow-lg
+max-w-sm w-full text-center">
+    <img
+    src="https://preview.redd.it/xhaakk9rp80d1.jpeg?auto=webp&s=c2f555b8932cda48f02fd3145ff9c107541d05d1"
+    class="w-24 h-21 rounded-full mx-auto mb-4 border-4
+    border-blue-400 object-cover"
+    alt="Re Emilio">
+
+    <h2 class="text-2xl font-bold text-gray-800">Emilio patillas</h2>
+    <p class=" text-sm text-gray-500 mb-6">Insano en todo, especialmente en los pvp</p>
+
+    <button id="btnAbrir" 
+    class="bg-blue-600 text-white px-6 py-2 
+    rounded-full font-semibold hover:bg-blue-400
+    transition-colors duration-300">Contacto</button>
+</article>
+
+    <div id="miModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex
+    items-center justify-center backdrop-blur-sm 
+    transition-opacity"> 
+     <div class="bg-white p-8 rounded-2xl max-w-sm w-full
+     text-center shadow-2xl">
+        <h3 class="text xl font-bold text-gray-800 mb-2">Formulario de Contacto </h3>
+        <p class="text-gray-600 mb-6">Pronto conectaremos esto a una API con IA</p>
+
+        <button id="btnCerrar" 
+        class="bg-blue-300 text-white px-6 py-2
+        rounded-full font-semibold hover:bg-red-700
+        transition-colors">
+    Cerrar ventana
+        </button>
+     </div>
+    </div>
+    
+    <script>
+        const botonAbrir = document.getElementById('btnAbrir');
+        const botonCerrar = document.getElementById('btnCerrar')
+        const modal = document.getElementById('miModal')
+
+        function alternarModal() {
+            modal.classList.toggle('hidden');
+        }
+
+        botonAbrir.addEventListener('click', alternarModal);
+        botonCerrar.addEventListener('click', alternarModal);
+
+        modal.addEventListener ('click',function(evento)
+    {
+if(evento.target === modal)
+{
+    alternarModal();
+}
+    });
+    </script>
+</body>
+</html>
